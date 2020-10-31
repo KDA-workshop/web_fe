@@ -1,8 +1,8 @@
-import Login from 'Pages/Login';
+import Navigation from 'Navigation';
 
 function App() {
     return (
-      <Login />
+      <Navigation />
     )
 }
 
