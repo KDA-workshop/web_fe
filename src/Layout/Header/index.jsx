@@ -1,19 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './style.scss';
 import { Drawer } from 'antd';
 import Menu from './menu';
 import { ReactComponent as BurgerMenu } from 'Assets/icon/menu_header.svg';
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
-console.log(Menu);
 const Header = () => {
 
+    const history = useHistory();
     const [showDrawer, setShowDrawer] = useState(false);
 
     const _toggleDrawer = () => setShowDrawer(prevShowDrawer => !prevShowDrawer);
 
+    useEffect(() => {
+        setShowDrawer(false);
+    }, [history.location.pathname])
+
     return (
-        <div className="main-header">
+        <div className='main-header'>
             <Drawer
                 title='Drawer Title'
                 placement='left'
@@ -23,8 +28,8 @@ const Header = () => {
             >
                 {
                     Menu.map((menu, index) => (
-                        <Link to={menu.path}>
-                            <div key={index} className="menu-list">
+                        <Link key={index} to={menu.path}>
+                            <div className='menu-list'>
                                 {menu.icon}
                                 {menu.name}
                             </div>

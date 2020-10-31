@@ -22,6 +22,17 @@ const Routes = [
             loader: () => import('Pages/Login'),
             loading: () => null
         })
+    },
+    {
+        path: '/test',
+        exact: true,
+        meta: {
+            title: 'Test'
+        },
+        component: Loadable({
+            loader: () => import('Pages/_Test'),
+            loading: () => null
+        })
     }
 ];
 
