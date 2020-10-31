@@ -7,4 +7,4 @@ Untuk mendownload project dan otomatis terhubung dengan remot repository.
 Untuk menginstall dependency library yang digunakan oleh app ini.
 
 ### `npm start`
-Untuk menjalankan web app, lalu buka [http://localhost:3000](http://localhost:3000)
+Untuk menjalankan web app, lalu akan otomatis membuka tab baru di browser dengan alamat [http://localhost:3000](http://localhost:3000)
