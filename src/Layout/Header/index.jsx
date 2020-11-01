@@ -58,48 +58,6 @@ const Header = () => {
             <BurgerMenu onClick={_toggleDrawer} />
         </div>
     )
-
-    return (
-        <div className='main-header'>
-            <Drawer
-                title='Drawer Title'
-                placement='left'
-                closable={false}
-                onClose={_toggleDrawer}
-                visible={showDrawer}
-            >
-                {
-                    Menu.map((menu, index) => (
-                        <Link key={index} to={menu.path}>
-                            <div className='menu-list'>
-                                {menu.icon}
-                                {menu.name}
-                            </div>
-                        </Link>
-                    ))
-                }
-            </Drawer>
-            <div className='content-area'>
-                <div className='left-navigation'>
-                    <Link to='/'>
-                        <span>App Name</span>
-                    </Link>
-                </div>
-                <div className='right-navigation'>
-                    <Link>
-                        <span>Bantuan</span>
-                    </Link>
-                    <Link>
-                        <span>Register</span>
-                    </Link>
-                    <Link to='/login'>
-                        <span>Login</span>
-                    </Link>
-                </div>
-            </div>
-            <BurgerMenu onClick={_toggleDrawer} />
-        </div>
-    )
 }
 
 export default Header;
