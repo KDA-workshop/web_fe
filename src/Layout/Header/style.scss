@@ -3,11 +3,31 @@
 .main-header {
     height: 60px;
     width: 100%;
-    background-color: $primary_color;
     padding: 0 15px;
     display: flex;
     align-items: center;
-
+    border-bottom: 1px solid $primary_color;
+    .content-area {
+        display: flex;
+        justify-content: space-between;
+        width: 70%;
+        height: 100%;
+        margin: auto;
+        align-items: center;
+        h3 {
+            color: $primary_color;
+            font-family: $rt_bold;
+        }
+        .right-navigation {
+            display: flex;
+            align-items: center;
+            span {
+                color: $primary_color;
+                padding: 0 12px;
+                font-family: $rt_bold;
+            }
+        }
+    }
     svg {
         width: 30px;
         cursor: pointer;

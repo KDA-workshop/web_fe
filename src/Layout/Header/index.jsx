@@ -19,7 +19,23 @@ const Header = () => {
 
     return (
         <div className='main-header'>
-            <Drawer
+            <div className='content-area'>
+                <Link to='/'>
+                    <h3>App Name</h3>
+                </Link>
+                <div className='right-navigation'>
+                    <Link>
+                        <span>Bantuan</span>
+                    </Link>
+                    <Link>
+                        <span>Register</span>
+                    </Link>
+                    <Link to='/login'>
+                        <span>Login</span>
+                    </Link>
+                </div>
+            </div>
+            {/* <Drawer
                 title='Drawer Title'
                 placement='left'
                 closable={false}
@@ -36,8 +52,8 @@ const Header = () => {
                         </Link>
                     ))
                 }
-            </Drawer>
-            <BurgerMenu onClick={_toggleDrawer} />
+            </Drawer> */}
+            {/* <BurgerMenu onClick={_toggleDrawer} /> */}
         </div>
     )
 }
