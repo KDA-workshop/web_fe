@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './style.scss';
 import { Drawer } from 'antd';
 import Menu from './menu';
-import { ReactComponent as BurgerMenu } from 'Assets/icon/menu_header.svg';
+import { ReactComponent as BurgerMenu } from 'Assets/Icons/menu_header.svg';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 

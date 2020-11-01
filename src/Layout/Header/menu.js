@@ -3,8 +3,8 @@
     Drawer menu list (only visible on mobile & low-end resolution)
 */
 
-import { ReactComponent as Home } from 'Assets/icon/home.svg';
-import { ReactComponent as Login } from 'Assets/icon/login.svg';
+import { ReactComponent as Home } from 'Assets/Icons/home.svg';
+import { ReactComponent as Login } from 'Assets/Icons/login.svg';
 
 const Menu = [
     {
