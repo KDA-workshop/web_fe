@@ -1,18 +1,19 @@
 
 import { useState } from 'react';
 import { connect } from 'react-redux';
-import * as Actions from 'Helpers/actions_creator';
-import { bindActionCreators } from 'redux'
+import * as Actions from 'Helpers/Action_Creators/Counter_Actions';
+import { bindActionCreators } from 'redux';
 
 function Test(props) {
 
     const [count, setCount] = useState(0);
     
     const increment = () => {
-        const newCount = {
-            count: props.counter.count + 1
-        };
-        props.actions.INCREMENT('COUNTER', newCount);
+        props.actions.INCREMENT();
+    }
+
+    const decrement = () => {
+        props.actions.DECREMENT();
     }
 
     return (
@@ -20,9 +21,11 @@ function Test(props) {
             <div style={{ margin: 'auto', width: '50%', marginTop: '20vh', textAlign: 'center'}}>
                 <p>redux state: {props.counter.count}</p>
                 <button onClick={increment}>Add</button>
+                <button onClick={decrement}>Subtract</button>
                 <div style={{height: 20}} />
                 <p>local state: {count}</p>
                 <button onClick={() => setCount(prevCount => prevCount + 1)}>Add</button>
+                <button onClick={() => setCount(prevCount => prevCount === 0 ? prevCount : prevCount - 1)}>Subtract</button>
             </div>
         </div>
     )
