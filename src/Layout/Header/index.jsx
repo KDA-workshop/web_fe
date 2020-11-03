@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import './style.scss';
 import { Drawer } from 'antd';
 import Menu from './menu';
@@ -17,24 +17,8 @@ const Header = () => {
         setShowDrawer(false);
     }, [history.location.pathname])
 
-    return (
-        <div className='main-header'>
-            <div className='content-area'>
-                <Link to='/'>
-                    <h3>App Name</h3>
-                </Link>
-                <div className='right-navigation'>
-                    <Link>
-                        <span>Bantuan</span>
-                    </Link>
-                    <Link>
-                        <span>Register</span>
-                    </Link>
-                    <Link to='/login'>
-                        <span>Login</span>
-                    </Link>
-                </div>
-            </div>
+    const MobileHeader = () => (
+        <div className='main-header mobile'>
             <Drawer
                 title='Drawer Title'
                 placement='left'
@@ -55,6 +39,31 @@ const Header = () => {
             </Drawer>
             <BurgerMenu onClick={_toggleDrawer} />
         </div>
+    )
+
+    const DefaultHeader = () => (
+        <div className='main-header desktop'>
+            <div className='content-area'>
+                <Link to='/'>
+                    <h3>App Name</h3>
+                </Link>
+                <div className='right-navigation'>
+                    <Link>
+                        <span>Bantuan</span>
+                    </Link>
+                    <Link>
+                        <span>Register</span>
+                    </Link>
+                    <Link to='/login'>
+                        <span>Login</span>
+                    </Link>
+                </div>
+            </div>
+        </div>
+    )
+
+    return (
+            <MobileHeader />
     )
 }
 
