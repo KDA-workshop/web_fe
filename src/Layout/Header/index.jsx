@@ -35,7 +35,7 @@ const Header = () => {
                     </Link>
                 </div>
             </div>
-            {/* <Drawer
+            <Drawer
                 title='Drawer Title'
                 placement='left'
                 closable={false}
@@ -52,8 +52,8 @@ const Header = () => {
                         </Link>
                     ))
                 }
-            </Drawer> */}
-            {/* <BurgerMenu onClick={_toggleDrawer} /> */}
+            </Drawer>
+            <BurgerMenu onClick={_toggleDrawer} />
         </div>
     )
 }
