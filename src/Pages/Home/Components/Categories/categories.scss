@@ -1,0 +1,64 @@
+@import 'Assets/Styles/variable.scss';
+@import 'Assets/Styles/breakpoints.scss';
+
+.categories-container {
+    background-color: #fff;
+    width: 68%;
+    margin: auto;
+    margin-top: 5vh;
+    @include tabletOrPhone {
+        width: 100%;
+        overflow: hidden;
+    }
+    .categories-header {
+        padding: 2vh;
+        border-bottom: 1px solid $border_color;
+        font-family: $rt_bold;
+        font-size: 1.8vh;
+        color: $font_color;
+        display: flex;
+        justify-content: space-between;
+        a {
+            font-family: $rt_regular;
+            color: $font_color
+        }
+        @include tabletOrPhone {
+            a {
+                display: none;
+            }
+        }
+    }
+    .categories-content {
+        padding: 5vh;
+        display: flex;
+        @include desktop {
+            justify-content: space-between;
+        }
+        @include tabletOrPhone {
+            flex-wrap: wrap;
+        }
+        .categories-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: $qs_bold;
+            white-space: nowrap;
+            font-size: 1.8vh;
+            color: $font_color;
+            svg {
+                cursor: pointer;
+                margin-bottom: 1.2rem;
+            }
+            @include tabletOrPhone {
+                width: calc((100%) / 3);
+                margin-bottom: 1.5rem;
+            }
+        }
+        .last-item {
+            @include desktop {
+                display: none;
+            }
+        }
+    }
+}

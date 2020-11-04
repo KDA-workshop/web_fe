@@ -26,6 +26,9 @@ const Header = () => {
                     </Link>
                 </div>
                 <div className='right-navigation'>
+                    <button type='button'>
+                        Search
+                    </button>
                     <Link>
                         <span>Bantuan</span>
                     </Link>
@@ -55,7 +58,7 @@ const Header = () => {
                     ))
                 }
                 <div className='drawer-submenu'>
-                    <div style={{height: '1rem'}} />
+                    <div style={{ height: '1rem' }} />
                     {
                         AdditionalMenu.map((menu, index) => (
                             <Link key={index} to={menu.path}>
