@@ -1,0 +1,14 @@
+
+// DESKTOP
+@mixin desktop {
+    @media only screen and (min-width: 992px) {
+        @content;
+    }
+}
+
+// TABLET || PHONE
+@mixin tabletOrPhone {
+    @media only screen and (max-width: 991px) and (min-width: 768px), (max-width: 767px) {
+        @content;
+    }
+}

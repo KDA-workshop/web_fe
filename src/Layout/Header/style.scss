@@ -1,12 +1,15 @@
 @import 'Assets/Styles/variable.scss';
+@import 'Assets/Styles/breakpoints.scss';
 
 .main-header {
-    height: 60px;
+    height: 8.5vh;
     width: 100%;
     padding: 0 15px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid $primary_color;
+    background-color: $primary_color;
+    position: fixed;
+    z-index: 1;
     .content-area {
         display: flex;
         justify-content: space-between;
@@ -14,24 +17,43 @@
         height: 100%;
         margin: auto;
         align-items: center;
-        h3 {
-            color: $primary_color;
-            font-family: $rt_bold;
+        @include tabletOrPhone {
+            display: none;
         }
-        .right-navigation {
+        input {
+            width: 50vh;
+            border-radius: .5vh;
+        }
+        .left-navigation, .right-navigation {
             display: flex;
             align-items: center;
+            height: 100%;
             span {
-                color: $primary_color;
                 padding: 0 12px;
-                font-family: $rt_bold;
+                color: $font_color;
+                font-family: $qs_bold;
+                font-size: 1.6vh;
+            }
+            button {
+                background-color: $font_color;
+                color: #fff;
+                border: none;
+                font-size: 1.6vh;
+                padding: .5vh 2vh;
+                border-radius: .4vh;
+                cursor: pointer;
+            }
+            button:hover {
+                opacity: .9;
             }
         }
     }
     svg {
+        @include desktop {
+            display: none;
+        }
         width: 30px;
         cursor: pointer;
-
         path {
             stroke: #fff;
         }
@@ -43,30 +65,32 @@
         background-color: $primary_color;
         border-radius: 0;
         .ant-drawer-title {
-            color: white;
-            font-family: $rt_bold;
+            color: $font_color;
+            font-family: $qs_bold;
             font-size: 1.1rem;
         }
     }
 
     .ant-drawer-body {
+        .drawer-submenu {
+            border-top: 1px solid $border_color;
+            margin: 1rem 0;
+        }
         .menu-list {
             display: flex;
             cursor: pointer;
+            padding: 8px;
             padding-left: 5px;
             align-items: center;
             font-size: 1rem;
             transition: background-color .25s, padding .25s;
-            color: $primary_color;
-            font-family: $rt_bold;
-            background-color: #fff;
+            color: $font_color;
+            font-family: $qs_bold;
             border-radius: 5px;
             svg {
-                width: 22px;
+                width: 26px;
+                height: 26px;
                 margin-right: .825rem;
-                path {
-                    fill: $primary_color;
-                }
             }
         }
         
@@ -74,11 +98,6 @@
             background-color: $primary_color;
             padding-left: 20px;
             color: white;
-            svg {
-                path {
-                    fill: #fff;
-                }
-            }
         }
     }
 }

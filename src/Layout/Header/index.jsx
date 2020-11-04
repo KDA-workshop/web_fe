@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './style.scss';
 import { Drawer } from 'antd';
-import Menu from './menu';
+import { Menu, AdditionalMenu } from './menu';
 import { ReactComponent as BurgerMenu } from 'Assets/Icons/menu_header.svg';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
@@ -20,10 +20,15 @@ const Header = () => {
     return (
         <div className='main-header'>
             <div className='content-area'>
-                <Link to='/'>
-                    <h3>App Name</h3>
-                </Link>
+                <div className='left-navigation'>
+                    <Link to='/'>
+                        <span>App Name</span>
+                    </Link>
+                </div>
                 <div className='right-navigation'>
+                    <button type='button'>
+                        Search
+                    </button>
                     <Link>
                         <span>Bantuan</span>
                     </Link>
@@ -52,6 +57,19 @@ const Header = () => {
                         </Link>
                     ))
                 }
+                <div className='drawer-submenu'>
+                    <div style={{ height: '1rem' }} />
+                    {
+                        AdditionalMenu.map((menu, index) => (
+                            <Link key={index} to={menu.path}>
+                                <div className='menu-list'>
+                                    {menu.icon}
+                                    {menu.name}
+                                </div>
+                            </Link>
+                        ))
+                    }
+                </div>
             </Drawer>
             <BurgerMenu onClick={_toggleDrawer} />
         </div>
