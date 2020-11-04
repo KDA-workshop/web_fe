@@ -20,9 +20,11 @@ const Header = () => {
     return (
         <div className='main-header'>
             <div className='content-area'>
-                <Link to='/'>
-                    <h3>App Name</h3>
-                </Link>
+                <div className='left-navigation'>
+                    <Link to='/'>
+                        <span>App Name</span>
+                    </Link>
+                </div>
                 <div className='right-navigation'>
                     <Link>
                         <span>Bantuan</span>
