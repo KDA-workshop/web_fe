@@ -1,11 +1,9 @@
 @import 'Assets/Styles/variable.scss';
 @import 'Assets/Styles/breakpoints.scss';
+@import 'Assets/Styles/mixin.scss';
 
 .categories-container {
-    background-color: #fff;
-    width: 68%;
-    margin: auto;
-    margin-top: 5vh;
+    @include card-section;
     @include tabletOrPhone {
         width: 100%;
         overflow: hidden;
@@ -35,6 +33,7 @@
             justify-content: space-between;
         }
         @include tabletOrPhone {
+            padding: 3vh 0;
             flex-wrap: wrap;
         }
         .categories-item {
@@ -44,15 +43,22 @@
             align-items: center;
             font-family: $qs_bold;
             white-space: nowrap;
-            font-size: 1.8vh;
+            font-size: 1.6vh;
             color: $font_color;
             svg {
+                width: 40px;
+                height: 40px;
                 cursor: pointer;
                 margin-bottom: 1.2rem;
             }
             @include tabletOrPhone {
-                width: calc((100%) / 3);
+                width: calc((100%) / 4);
                 margin-bottom: 1.5rem;
+                font-size: 1.4vh;
+                svg {
+                    width: 35px;
+                    height: 35px;
+                }
             }
         }
         .last-item {

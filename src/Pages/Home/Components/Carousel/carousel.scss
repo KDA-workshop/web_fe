@@ -53,6 +53,7 @@
                     height: 5vh;
                     font-size: 1.6vh;
                     border-radius: .5vh;
+                    margin-left: 2px;
                 }
                 @include tabletOrPhone {
                     width: 100%;
@@ -84,6 +85,7 @@
         }
         svg:hover {
             path {
+                transition: .25s;
                 fill: $primary_color;
             }
         }
