@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import './style.scss';
 import { Drawer } from 'antd';
-import Menu from './menu';
+import { Menu, AdditionalMenu } from './menu';
 import { ReactComponent as BurgerMenu } from 'Assets/Icons/menu_header.svg';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
@@ -54,6 +54,19 @@ const Header = () => {
                         </Link>
                     ))
                 }
+                <div className='drawer-submenu'>
+                    <div style={{height: '1rem'}} />
+                    {
+                        AdditionalMenu.map((menu, index) => (
+                            <Link key={index} to={menu.path}>
+                                <div className='menu-list'>
+                                    {menu.icon}
+                                    {menu.name}
+                                </div>
+                            </Link>
+                        ))
+                    }
+                </div>
             </Drawer>
             <BurgerMenu onClick={_toggleDrawer} />
         </div>

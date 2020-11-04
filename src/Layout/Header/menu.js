@@ -7,8 +7,10 @@ import { ReactComponent as Home } from 'Assets/Icons/For_Drawer/house.svg';
 import { ReactComponent as Login } from 'Assets/Icons/For_Drawer/login.svg';
 import { ReactComponent as Register } from 'Assets/Icons/For_Drawer/register.svg';
 import { ReactComponent as Help } from 'Assets/Icons/For_Drawer/help.svg';
+import { ReactComponent as TermsCondition } from 'Assets/Icons/For_Drawer/terms-and-conditions.svg';
+import { ReactComponent as PrivacyPolicy } from 'Assets/Icons/For_Drawer/privacy-policy.svg';
 
-const Menu = [
+export const Menu = [
     {
         name: 'Home',
         icon: <Home />,
@@ -31,4 +33,15 @@ const Menu = [
     }
 ];
 
-export default Menu;
+export const AdditionalMenu = [
+    {
+        name: 'Kebijakan Privasi',
+        icon: <PrivacyPolicy />,
+        path: '/privacy-policy'
+    },
+    {
+        name: 'Aturan Penggunaan',
+        icon: <TermsCondition />,
+        path: '/terms-condition'
+    }
+];
