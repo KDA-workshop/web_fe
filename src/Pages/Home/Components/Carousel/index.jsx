@@ -1,4 +1,4 @@
-import { Fragment, useRef } from "react";
+import { useRef } from "react";
 import { Carousel, Button } from "antd";
 import './carousel.scss';
 import { ReactComponent as MarketList } from 'Assets/Illustrations/market_list.svg';
@@ -44,23 +44,21 @@ const CarouselSlide = () => {
     const slider = useRef();
 
     return (
-        <Fragment>
-            <div className='carousel-fluid-background'>
-                <div className='carousel-container'>
-                    <Carousel ref={ref => {slider.current = ref}} autoplay dots={false}>
-                        {
-                            CarouselRaw.map((item, index) => (
-                                <CarouselItem key={index} {...item} />
-                            ))
-                        }
-                    </Carousel>
-                    <div className='carousel-manual-slide'>
-                        <Chevron onClick={() => slider.current.slick.slickPrev()} />
-                        <Chevron onClick={() => slider.current.slick.slickNext()} />
-                    </div>
+        <div className='carousel-fluid-background'>
+            <div className='carousel-container'>
+                <Carousel ref={ref => { slider.current = ref }} autoplay dots={false}>
+                    {
+                        CarouselRaw.map((item, index) => (
+                            <CarouselItem key={index} {...item} />
+                        ))
+                    }
+                </Carousel>
+                <div className='carousel-manual-slide'>
+                    <Chevron onClick={() => slider.current.slick.slickPrev()} />
+                    <Chevron onClick={() => slider.current.slick.slickNext()} />
                 </div>
             </div>
-        </Fragment>
+        </div>
     );
 }
 
