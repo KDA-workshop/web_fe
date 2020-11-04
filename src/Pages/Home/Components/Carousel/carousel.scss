@@ -3,12 +3,12 @@
 
 .carousel-fluid-background {
     width: 100%;
-    padding: 15vh 0;
+    padding: 25vh 0;
     position: relative;
     background: rgb(0, 246, 158);
     background: linear-gradient(180deg, rgba(0, 246, 158, 1) 0%, rgba(138, 246, 0, 0.444) 100%);
     @include tabletOrPhone {
-        padding: 5vh 0;
+        padding: 15vh 0;
     }
     .carousel-container {
         width: 68%;
@@ -52,10 +52,11 @@
                     width: 20vh;
                     height: 5vh;
                     font-size: 1.6vh;
-                    border-radius: 0.5vh;
+                    border-radius: .5vh;
                 }
                 @include tabletOrPhone {
                     width: 100%;
+                    margin-top: 1.5rem;
                     align-items: center;
                     h3, p {
                         text-align: center;
@@ -87,9 +88,7 @@
             }
         }
         @include tabletOrPhone {
-            left: 0;
-            bottom: 0;
-            width: 100%;
+            display: none;
         }
     }
 }
