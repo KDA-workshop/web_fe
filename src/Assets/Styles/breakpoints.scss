@@ -1,16 +1,21 @@
-@import '../../Layout/Header/style.scss';
 
 // DESKTOP
-@media only screen and (min-width: 992px) {
-    .mobile { display: none;}
+@mixin desktop {
+    @media only screen and (min-width: 992px) {
+        @content;
+    }
 }
 
 // TABLET
-@media only screen and (max-width: 991px) and (min-width: 768px) {
-    .desktop { display: none;}
+@mixin tablet {
+    @media only screen and (max-width: 991px) and (min-width: 768px) {
+        @content;
+    }
 }
 
 // MOBILE
-@media only screen and (min-width: 767px) {
-    .desktop { display: none;}
+@mixin mobile {
+    @media only screen and (max-width: 767px) {
+        @content;
+    }
 }
