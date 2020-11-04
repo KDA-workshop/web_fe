@@ -1,5 +1,10 @@
 @import 'Assets/Styles/variable.scss';
 
-.ant-col {
+.fluid-app-suggestion {
     background-color: $primary_color;
+    padding-top: 3.8rem;
+    .app-suggestion {
+        width: 68%;
+        margin: auto;
+    }
 }

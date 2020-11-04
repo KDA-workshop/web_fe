@@ -8,6 +8,8 @@
     display: flex;
     align-items: center;
     background-color: $primary_color;
+    position: fixed;
+    z-index: 1;
     .content-area {
         display: flex;
         justify-content: space-between;
@@ -18,12 +20,16 @@
         @include tabletOrPhone {
             display: none;
         }
+        input {
+            width: 50vh;
+            border-radius: .5vh;
+        }
         .left-navigation, .right-navigation {
             display: flex;
             align-items: center;
             span {
-                color: $font_color;
                 padding: 0 12px;
+                color: $font_color;
                 font-family: $qs_bold;
                 font-size: 1.6vh;
             }

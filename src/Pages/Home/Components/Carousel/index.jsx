@@ -27,7 +27,7 @@ const CarouselRaw = [
     }
 ]
 
-function CarouselItem({ name, description, illustration, buttonText }) {
+const CarouselItem = ({ name, description, illustration, buttonText }) => {
     return (
         <div className='carousel-item'>
             <div className='carousel-item-info'>
@@ -40,7 +40,7 @@ function CarouselItem({ name, description, illustration, buttonText }) {
     )
 }
 
-function CarouselSlide() {
+const CarouselSlide = () => {
     const slider = useRef();
 
     return (
@@ -65,12 +65,3 @@ function CarouselSlide() {
 }
 
 export default CarouselSlide;
-
-
-// {
-//     [1, 2, 3, 4, 5].map((x, i) => {
-//         <div className='carousel-item'>
-//             <h3>Hi {i + 1}</h3>
-//         </div>
-//     })
-// }
