@@ -27,7 +27,7 @@
             span {
                 color: $font_color;
                 padding: 0 12px;
-                font-family: $rt_bold;
+                font-family: $qs_bold;
             }
         }
     }
@@ -48,8 +48,8 @@
         background-color: $primary_color;
         border-radius: 0;
         .ant-drawer-title {
-            color: white;
-            font-family: $rt_bold;
+            color: $font_color;
+            font-family: $qs_bold;
             font-size: 1.1rem;
         }
     }
@@ -58,20 +58,19 @@
         .menu-list {
             display: flex;
             cursor: pointer;
+            padding: 8px;
             padding-left: 5px;
             align-items: center;
             font-size: 1rem;
             transition: background-color .25s, padding .25s;
-            color: $primary_color;
-            font-family: $rt_bold;
+            color: $font_color;
+            font-family: $qs_bold;
             background-color: #fff;
             border-radius: 5px;
             svg {
                 width: 22px;
+                height: 22px;
                 margin-right: .825rem;
-                path {
-                    fill: $primary_color;
-                }
             }
         }
         
@@ -79,11 +78,6 @@
             background-color: $primary_color;
             padding-left: 20px;
             color: white;
-            svg {
-                path {
-                    fill: #fff;
-                }
-            }
         }
     }
 }

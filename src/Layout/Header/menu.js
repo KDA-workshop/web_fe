@@ -3,8 +3,10 @@
     Drawer menu list (only visible on mobile & low-end resolution)
 */
 
-import { ReactComponent as Home } from 'Assets/Icons/home.svg';
-import { ReactComponent as Login } from 'Assets/Icons/login.svg';
+import { ReactComponent as Home } from 'Assets/Icons/For_Drawer/house.svg';
+import { ReactComponent as Login } from 'Assets/Icons/For_Drawer/login.svg';
+import { ReactComponent as Register } from 'Assets/Icons/For_Drawer/register.svg';
+import { ReactComponent as Help } from 'Assets/Icons/For_Drawer/help.svg';
 
 const Menu = [
     {
@@ -18,9 +20,14 @@ const Menu = [
         path: '/login'
     },
     {
-        name: 'Test',
-        icon: <div />,
-        path: '/test'
+        name: 'Register',
+        icon: <Register />,
+        path: '/register'
+    },
+    {
+        name: 'Bantuan',
+        icon: <Help />,
+        path: '/help'
     }
 ];
 
