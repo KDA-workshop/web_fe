@@ -6,16 +6,9 @@
     }
 }
 
-// TABLET
-@mixin tablet {
-    @media only screen and (max-width: 991px) and (min-width: 768px) {
-        @content;
-    }
-}
-
-// MOBILE
-@mixin mobile {
-    @media only screen and (max-width: 767px) {
+// TABLET || PHONE
+@mixin tabletOrPhone {
+    @media only screen and (max-width: 991px) and (min-width: 768px), (max-width: 767px) {
         @content;
     }
 }

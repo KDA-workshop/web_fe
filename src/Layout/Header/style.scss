@@ -15,10 +15,7 @@
         height: 100%;
         margin: auto;
         align-items: center;
-        @include mobile {
-            display: none;
-        }
-        @include tablet {
+        @include tabletOrPhone {
             display: none;
         }
         .left-navigation, .right-navigation {
@@ -28,6 +25,7 @@
                 color: $font_color;
                 padding: 0 12px;
                 font-family: $qs_bold;
+                font-size: 1.6vh;
             }
         }
     }
