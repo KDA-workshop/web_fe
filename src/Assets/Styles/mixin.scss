@@ -4,3 +4,11 @@
     background-color: #fff;
     margin-top: 5vh;
 }
+
+@mixin card-header {
+    padding: 2vh;
+    border-bottom: 1px solid $border_color;
+    font-family: $rt_bold;
+    font-size: 1.8vh;
+    color: $font_color;
+}

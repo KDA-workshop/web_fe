@@ -9,11 +9,7 @@
         overflow: hidden;
     }
     .categories-header {
-        padding: 2vh;
-        border-bottom: 1px solid $border_color;
-        font-family: $rt_bold;
-        font-size: 1.8vh;
-        color: $font_color;
+        @include card-header;
         display: flex;
         justify-content: space-between;
         a {
