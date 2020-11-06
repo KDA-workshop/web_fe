@@ -12,12 +12,13 @@
 
 	.discount-header {
 		@include card-header;
+		display: none;
 	}
 
 	.discount-content {
 		padding: 4vh 0;
         position: relative;
-        // background: linear-gradient(225deg, $primary_color 0%, #b9d82e 100%);
+        background: linear-gradient(225deg, $primary_color 0%, #b9d82e 100%);
 
         .discount-event-countdown {
             padding: 0 2vh 3vh;
@@ -34,9 +35,9 @@
             }
 
             .countdown-widget {
-                background: linear-gradient(180deg, #51ffc2 0%, #7db1ffcf 100%);
+                background: linear-gradient(180deg, #51ffc2 0%, #fff949cf 100%);
                 margin-left: 2vh;
-                background-color: burlywood;
+                background-color: #fff;
                 border-radius: .4vh;
                 padding: .2vh 2.5vh;
                 font-family: $qs_bold;
@@ -49,9 +50,9 @@
         }
 
 		.discount-item-wrapper {
-            // background: linear-gradient(225deg, $primary_color 0%, #b9d82e 100%);
-
-            .discount-item {
+			
+			.discount-item {
+				// background: linear-gradient(225deg, $primary_color 0%, #b9d82e 100%);
                 background-color: #fff;
 				border: 1px solid $border_color;
 				height: 44vh;
