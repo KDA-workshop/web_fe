@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import moment from 'moment'
 import './discount.scss';
@@ -40,17 +40,6 @@ const DiscountItemRaw = [
 
 const TrippledCount = [...DiscountItemRaw, ...DiscountItemRaw, ...DiscountItemRaw]
 
-const CarouselSettingsDesktop = {
-    lazyLoad: true,
-    dots: false,
-    autoplay: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 5
-}
-
-const CarouselSettingsMobile = Object.assign({}, CarouselSettingsDesktop, { slidesToShow: 2 })
-
 const progressFormula = (rest, total) => {
     const value = Number((rest / total).toFixed(2))
     return 100 - (value * 100)
@@ -84,8 +73,36 @@ const DiscountItem = ({ name, image, dealPrice, strikeThroughPrice, stockRest, s
 }
 
 const Discount = () => {
+
+    const [activeSlide, setActiveSlide] = useState(0)
+
     const isDesktop = useMediaQuery({ minWidth: 992 })
     const discountSlider = useRef()
+
+    const CarouselSettingsDesktop = {
+        lazyLoad: true,
+        dots: false,
+        autoplay: false,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        afterChange: current => setActiveSlide(current)
+    }
+
+    const CarouselSettingsMobile = Object.assign({}, CarouselSettingsDesktop, { slidesToShow: 2, slidesToScroll: 2 })
+    const slideLength = TrippledCount.length
+    
+    const showNextArrow = isDesktop ? (
+            Boolean((slideLength - CarouselSettingsDesktop.slidesToShow) - activeSlide)
+        ) : (
+            Boolean((slideLength - CarouselSettingsMobile.slidesToShow) - activeSlide)
+        )
+    const showPrevArrow = isDesktop ? (
+            Boolean(0 + activeSlide)
+        ) : (
+            Boolean(0 + activeSlide)
+        )
     return (
         <div className='discount-container'>
             <div className='discount-header'>
@@ -120,8 +137,17 @@ const Discount = () => {
                     }
                 </div>
                 <div className="discount-manual-slider">
-                    <Chevron onClick={() => discountSlider.current.slick.slickPrev()} />
-                    <Chevron onClick={() => discountSlider.current.slick.slickNext()} />
+                    {
+                        showPrevArrow ? (
+                            <Chevron onClick={() => discountSlider.current.slick.slickPrev()} />
+                        ) : (
+                            <div />
+                        )
+                    }
+                    {
+                        showNextArrow &&
+                        <Chevron onClick={() => discountSlider.current.slick.slickNext()} />
+                    }
                 </div>
             </div>
         </div>
