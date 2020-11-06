@@ -1,5 +1,5 @@
-import { useRef } from "react";
-import { Carousel, Button } from "antd";
+import { useRef } from 'react';
+import { Carousel, Button } from 'antd';
 import './carousel.scss';
 import { ReactComponent as MarketList } from 'Assets/Illustrations/market_list.svg';
 import { ReactComponent as EasyShopping } from 'Assets/Illustrations/easy_shopping.svg';
@@ -46,7 +46,7 @@ const CarouselSlide = () => {
     return (
         <div className='carousel-fluid-background'>
             <div className='carousel-container'>
-                <Carousel ref={ref => { slider.current = ref }} autoplay dots={false}>
+                <Carousel ref={ref => slider.current = ref} autoplay dots={false}>
                     {
                         CarouselRaw.map((item, index) => (
                             <CarouselItem key={index} {...item} />
