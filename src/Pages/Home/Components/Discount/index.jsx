@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import { useMediaQuery } from 'react-responsive'
 import './discount.scss';
 import { Carousel } from 'antd';
 import Anemos from 'Assets/Images/anemos.png';
@@ -38,7 +39,7 @@ const DiscountItemRaw = [
 
 const TrippledCount = [...DiscountItemRaw, ...DiscountItemRaw, ...DiscountItemRaw]
 
-const CarouselSettings = {
+const CarouselSettingsDesktop = {
     lazyLoad: true,
     dots: false,
     autoplay: false,
@@ -46,6 +47,8 @@ const CarouselSettings = {
     speed: 500,
     slidesToShow: 5
 }
+
+const CarouselSettingsMobile = Object.assign({}, CarouselSettingsDesktop, { slidesToShow: 2 })
 
 const progressFormula = (rest, total) => {
     const value = Number((rest / total).toFixed(2))
@@ -70,7 +73,7 @@ const DiscountItem = ({ name, image, dealPrice, strikeThroughPrice, stockRest, s
                             <div className="badge-rest">{stockRest}/{stockTotal}</div>
                         </div>
                         <div className="stock-total-bar">
-                            <div style={{width: `${progressFormula(stockRest, stockTotal)}%`}} className="stock-rest-bar" />
+                            <div style={{ width: `${progressFormula(stockRest, stockTotal)}%` }} className="stock-rest-bar" />
                         </div>
                     </div>
                 </div>
@@ -80,6 +83,7 @@ const DiscountItem = ({ name, image, dealPrice, strikeThroughPrice, stockRest, s
 }
 
 const Discount = () => {
+    const isDesktop = useMediaQuery({ minWidth: 992 })
     const discountSlider = useRef()
     return (
         <div className='discount-container'>
@@ -91,13 +95,25 @@ const Discount = () => {
                     <h3>Berakhir Dalam</h3>
                 </div>
                 <div className="discount-item-wrapper">
-                    <Carousel ref={ref => discountSlider.current = ref} {...CarouselSettings}>
-                        {
-                            TrippledCount.map((item, index) => (
-                                <DiscountItem key={index} {...item} />
-                            ))
-                        }
-                    </Carousel>
+                    {
+                        isDesktop ? (
+                            <Carousel ref={ref => discountSlider.current = ref} {...CarouselSettingsDesktop}>
+                                {
+                                    TrippledCount.map((item, index) => (
+                                        <DiscountItem key={index} {...item} />
+                                    ))
+                                }
+                            </Carousel>
+                        ) : (
+                            <Carousel ref={ref => discountSlider.current = ref} {...CarouselSettingsMobile}>
+                                {
+                                    TrippledCount.map((item, index) => (
+                                        <DiscountItem key={index} {...item} />
+                                    ))
+                                }
+                            </Carousel>
+                        )
+                    }
                 </div>
                 <div className="discount-manual-slider">
                     <Chevron onClick={() => discountSlider.current.slick.slickPrev()} />
