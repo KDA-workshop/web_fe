@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { useMediaQuery } from 'react-responsive'
+import moment from 'moment'
 import './discount.scss';
 import { Carousel } from 'antd';
 import Anemos from 'Assets/Images/anemos.png';
@@ -92,7 +93,10 @@ const Discount = () => {
             </div>
             <div className="discount-content">
                 <div className="discount-event-countdown">
-                    <h3>Berakhir Dalam</h3>
+                    <span>Berakhir Dalam</span>
+                    <div className="countdown-widget">
+                        00:12:44
+                    </div>
                 </div>
                 <div className="discount-item-wrapper">
                     {

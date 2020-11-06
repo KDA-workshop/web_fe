@@ -19,6 +19,35 @@
         position: relative;
         // background: linear-gradient(225deg, $primary_color 0%, #b9d82e 100%);
 
+        .discount-event-countdown {
+            padding: 0 2vh 3vh;
+            display: flex;
+            align-items: center;
+            font-size: 3vh;
+            font-family: $qs_regular;
+            white-space: nowrap;
+            color: $font_color;
+            @include tabletOrPhone {
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+
+            .countdown-widget {
+                background: linear-gradient(180deg, #51ffc2 0%, #7db1ffcf 100%);
+                margin-left: 2vh;
+                background-color: burlywood;
+                border-radius: .4vh;
+                padding: .2vh 2.5vh;
+                font-family: $qs_bold;
+                font-size: 4vh;
+                color: $font_color;
+                @include tabletOrPhone {
+                    margin-left: 0;
+                }
+            }
+        }
+
 		.discount-item-wrapper {
             // background: linear-gradient(225deg, $primary_color 0%, #b9d82e 100%);
 
