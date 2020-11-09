@@ -16,167 +16,160 @@
 	}
 
 	.discount-content {
-		padding: 4vh 0;
-        position: relative;
-        background: linear-gradient(225deg, $primary_color 0%, #b9d82e 100%);
+		// background: linear-gradient(225deg, $primary_color 0%, #b9d82e 100%);
 
-        .discount-event-countdown {
-            padding: 0 2vh 3vh;
-            display: flex;
-            align-items: center;
-            font-size: 3vh;
-            font-family: $qs_regular;
-            white-space: nowrap;
-            color: $font_color;
-            @include tabletOrPhone {
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: flex-start;
-            }
-
-            .countdown-widget {
-                background: linear-gradient(180deg, #51ffc2 0%, #fff949cf 100%);
-                margin-left: 2vh;
-                background-color: #fff;
-                border-radius: .4vh;
-                padding: .2vh 2.5vh;
-                font-family: $qs_bold;
-                font-size: 4vh;
-                color: $font_color;
-                @include tabletOrPhone {
-                    margin-left: 0;
-                }
-            }
-        }
-
-		.discount-item-wrapper {
-			
-			.discount-item {
-				// background: linear-gradient(225deg, $primary_color 0%, #b9d82e 100%);
-                background-color: #fff;
-				border: 1px solid $border_color;
-				height: 44vh;
-				width: 24vh;
-				overflow: hidden;
-                border-radius: .2vh;
-                margin: auto;
-
-				img {
-					height: 50%;
-					width: 100%;
-					object-fit: cover;
-				}
-
-				.discount-item-info {
-					height: 50%;
-					position: relative;
-					padding: 1vh;
-					display: flex;
-					flex-direction: column;
-
-					.product-name {
-						font-family: $qs_regular;
-						color: $font_color;
-						font-size: 1.6vh;
-					}
-
-					.strike-through {
-						color: $font_fade;
-						font-size: 1.4vh;
-						text-decoration-line: line-through;
-					}
-
-					.deal-price {
-						color: $font_color;
-						font-family: $qs_bold;
-						font-size: 2vh;
-						display: flex;
-						align-items: center;
-
-						.discount-badge {
-							margin-left: .5vh;
-							padding: .1vh .5vh;
-							border-radius: .2vh;
-							font-size: 1.4vh;
-							font-family: $rt_bold;
-							color: $font_color;
-							background-color: $primary_fade;
-						}
-					}
-
-					.stock-wrapper {
-						position: absolute;
-						left: 0;
-						bottom: 0;
-						width: 100%;
-						padding: 1vh;
-
-						.stock-bar {
-							display: flex;
-							flex-direction: column;
-							justify-content: flex-end;
-
-							.stock-rest {
-								display: flex;
-								justify-content: flex-end;
-								align-items: center;
-								color: $font_color;
-								font-family: $rt_bold;
-								font-size: 1.4vh;
-
-								.badge-rest {
-									padding: .1vh .5vh;
-									background-color: $discount_rest;
-									margin-left: .6vh;
-									font-family: $rt_bold;
-									border-radius: .2vh;
-									color: $font_color;
-								}
-							}
-
-							.stock-total-bar {
-								margin-top: .6vh;
-								height: 1vh;
-								display: flex;
-								justify-content: flex-end;
-								background: linear-gradient(90deg, $primary_color 1.35%, #e6e930 101.66%);
-								width: 100%;
-
-								.stock-rest-bar {
-									width: 30%;
-									background-color: $border_color;
-									height: 100%;
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-
-		.discount-manual-slider {
-			position: absolute;
-			left: 0;
-			bottom: 50%;
-			width: 100%;
+		.discount-info-wrapper {
+			padding: 1vh 0 1vh 1vh;
 			display: flex;
-			justify-content: space-between;
-			align-items: center;
+			justify-content: center;
+			@include tabletOrPhone {
+				flex-direction: column;
+				padding: 0;
+			}
 
-			svg {
-				cursor: pointer;
-				width: 3vh;
-				background-color: $border_color;
-                opacity: .5;
-                transition: opacity .25s;
-				filter: invert(100%);
+			.discount-event-countdown {
+				background: linear-gradient(180deg, #00F69E 1.67%, #A3FF83 54.73%, #F5FFA4 100%);
+				width: 40%;
+			}
 
-				&:not(:first-child) {
-					transform: rotate(180deg);
+			.discount-item-wrapper {
+				width: 60%;
+				position: relative;
+				@include tabletOrPhone {
+					width: 100%;
 				}
 
-				&:hover {
-					opacity: .7;
+				.discount-item {
+					// background: linear-gradient(225deg, $primary_color 0%, #b9d82e 100%);
+					background-color: #fff;
+					border: 1px solid $border_color;
+					height: 44vh;
+					width: 24vh;
+					overflow: hidden;
+					border-radius: .2vh;
+					margin: auto;
+
+					img {
+						height: 50%;
+						width: 100%;
+						object-fit: cover;
+					}
+
+					.discount-item-info {
+						height: 50%;
+						position: relative;
+						padding: 1vh;
+						display: flex;
+						flex-direction: column;
+
+						.product-name {
+							font-family: $qs_regular;
+							color: $font_color;
+							font-size: 1.6vh;
+						}
+
+						.strike-through {
+							color: $font_fade;
+							font-size: 1.4vh;
+							text-decoration-line: line-through;
+						}
+
+						.deal-price {
+							color: $font_color;
+							font-family: $qs_bold;
+							font-size: 2vh;
+							display: flex;
+							align-items: center;
+
+							.discount-badge {
+								margin-left: .5vh;
+								padding: .1vh .5vh;
+								border-radius: .2vh;
+								font-size: 1.4vh;
+								font-family: $rt_bold;
+								color: $font_color;
+								background-color: $primary_fade;
+							}
+						}
+
+						.stock-wrapper {
+							position: absolute;
+							left: 0;
+							bottom: 0;
+							width: 100%;
+							padding: 1vh;
+
+							.stock-bar {
+								display: flex;
+								flex-direction: column;
+								justify-content: flex-end;
+
+								.stock-rest {
+									display: flex;
+									justify-content: flex-end;
+									align-items: center;
+									color: $font_color;
+									font-family: $rt_bold;
+									font-size: 1.4vh;
+
+									.badge-rest {
+										padding: .1vh .5vh;
+										background-color: $discount_rest;
+										margin-left: .6vh;
+										font-family: $rt_bold;
+										border-radius: .2vh;
+										color: $font_color;
+									}
+								}
+
+								.stock-total-bar {
+									margin-top: .6vh;
+									height: 1vh;
+									display: flex;
+									justify-content: flex-end;
+									background: linear-gradient(90deg, $primary_color 1.35%, #e6e930 101.66%);
+									width: 100%;
+
+									.stock-rest-bar {
+										width: 30%;
+										background-color: $border_color;
+										height: 100%;
+									}
+								}
+							}
+						}
+					}
+				}
+
+				.discount-manual-slider {
+					position: absolute;
+					right: 0;
+					bottom: 50%;
+					width: 100%;
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+
+					@include tabletOrPhone {
+						display: none;
+					}
+
+					svg {
+						cursor: pointer;
+						width: 3vh;
+						background-color: $border_color;
+						opacity: .5;
+						transition: opacity .25s;
+						filter: invert(100%);
+
+						&:not(:first-child) {
+							transform: rotate(180deg);
+						}
+
+						&:hover {
+							opacity: .7;
+						}
+					}
 				}
 			}
 		}

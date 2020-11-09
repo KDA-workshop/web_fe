@@ -11,7 +11,7 @@ import { ReactComponent as Chevron } from 'Assets/Icons/chevron-no-bg.svg';
 const DiscountItemRaw = [
     {
         name: 'Anemos Type-R Alterasia Nature Bloom',
-        image: 'https://www.gadgetreview.com/wp-content/uploads/2020/05/Asus-Zephyrus-S-GX701-Review.jpg',
+        image: Anemos,
         dealPrice: 'Rp 775.000',
         strikeThroughPrice: 'Rp 925.000',
         stockRest: 7,
@@ -20,7 +20,7 @@ const DiscountItemRaw = [
     },
     {
         name: 'Flame Lord Type-F Blazing Figure',
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSOPgjp9tuHX-Y2Rek5OXJk4VIHA8BHckrJbg&usqp=CAU',
+        image: FlameLord,
         dealPrice: 'Rp 1.575.000',
         strikeThroughPrice: 'Rp 1.925.000',
         stockRest: 11,
@@ -29,7 +29,7 @@ const DiscountItemRaw = [
     },
     {
         name: 'Crimson Avenger Type-Q Blood Boil',
-        image: 'https://live.mrf.io/statics/i/ps/fscl01.fonpit.de/userfiles/7640001/image/best-high-end-smartphones/AndroidPIT-Best-High-End-Smartphones-Hero-1-w810h462.jpg',
+        image: CrimsonAvenger,
         dealPrice: 'Rp 275.000',
         strikeThroughPrice: 'Rp 475.000',
         stockRest: 2,
@@ -85,7 +85,7 @@ const Discount = () => {
         autoplay: false,
         infinite: false,
         speed: 500,
-        slidesToShow: 5,
+        slidesToShow: 3,
         slidesToScroll: 1,
         afterChange: current => setActiveSlide(current)
     }
@@ -109,45 +109,44 @@ const Discount = () => {
                 <span>DISKON SERU</span>
             </div>
             <div className="discount-content">
-                <div className="discount-event-countdown">
-                    <span>Berakhir Dalam</span>
-                    <div className="countdown-widget">
-                        00:12:44
+                <div className="discount-info-wrapper">
+                    <div className="discount-event-countdown">
+                        <h3>Best Deal</h3>
                     </div>
-                </div>
-                <div className="discount-item-wrapper">
-                    {
-                        isDesktop ? (
-                            <Carousel ref={ref => discountSlider.current = ref} {...CarouselSettingsDesktop}>
-                                {
-                                    TrippledCount.map((item, index) => (
-                                        <DiscountItem key={index} {...item} />
-                                    ))
-                                }
-                            </Carousel>
-                        ) : (
-                            <Carousel ref={ref => discountSlider.current = ref} {...CarouselSettingsMobile}>
-                                {
-                                    TrippledCount.map((item, index) => (
-                                        <DiscountItem key={index} {...item} />
-                                    ))
-                                }
-                            </Carousel>
-                        )
-                    }
-                </div>
-                <div className="discount-manual-slider">
-                    {
-                        showPrevArrow ? (
-                            <Chevron onClick={() => discountSlider.current.slick.slickPrev()} />
-                        ) : (
-                            <div />
-                        )
-                    }
-                    {
-                        showNextArrow &&
-                        <Chevron onClick={() => discountSlider.current.slick.slickNext()} />
-                    }
+                    <div className="discount-item-wrapper">
+                        {
+                            isDesktop ? (
+                                <Carousel ref={ref => discountSlider.current = ref} {...CarouselSettingsDesktop}>
+                                    {
+                                        TrippledCount.map((item, index) => (
+                                            <DiscountItem key={index} {...item} />
+                                        ))
+                                    }
+                                </Carousel>
+                            ) : (
+                                <Carousel ref={ref => discountSlider.current = ref} {...CarouselSettingsMobile}>
+                                    {
+                                        TrippledCount.map((item, index) => (
+                                            <DiscountItem key={index} {...item} />
+                                        ))
+                                    }
+                                </Carousel>
+                            )
+                        }
+                        <div className="discount-manual-slider">
+                            {
+                                showPrevArrow ? (
+                                    <Chevron onClick={() => discountSlider.current.slick.slickPrev()} />
+                                ) : (
+                                    <div />
+                                )
+                            }
+                            {
+                                showNextArrow &&
+                                <Chevron onClick={() => discountSlider.current.slick.slickNext()} />
+                            }
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
