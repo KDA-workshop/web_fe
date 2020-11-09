@@ -1,0 +1,18 @@
+@import 'Assets/Styles/variable.scss';
+@import 'Assets/Styles/breakpoints.scss';
+@import 'Assets/Styles/mixin.scss';
+
+.popular-fluid-background {
+    background-color: white;
+    margin-top: 5vh;
+    padding: 0;
+    svg {
+        width: 100%;
+    }
+    .content-area {
+        width: 68%;
+        background-color: cornflowerblue;
+        margin: auto;
+        height: 100px;
+    }
+}
