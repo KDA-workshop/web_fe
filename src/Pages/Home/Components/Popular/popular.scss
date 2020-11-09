@@ -14,5 +14,9 @@
         background-color: cornflowerblue;
         margin: auto;
         height: 100px;
+
+        @include tabletOrPhone {
+            width: 100%;
+        }
     }
 }
