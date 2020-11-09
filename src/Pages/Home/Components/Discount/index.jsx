@@ -110,8 +110,8 @@ const Discount = () => {
             </div>
             <div className="discount-content">
                 <div className="discount-info-wrapper">
-                    <div className="discount-event-countdown">
-                        <h3>Best Deal</h3>
+                    <div className="discount-banner-list">
+                        <div className="banner-item">disc 1</div>
                     </div>
                     <div className="discount-item-wrapper">
                         {
