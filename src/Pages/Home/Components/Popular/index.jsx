@@ -4,7 +4,7 @@ import { ReactComponent as WaveBackground } from 'Assets/Illustrations/wave_back
 const Popular = () => {
     return(
         <div className='popular-fluid-background'>
-            {/* <WaveBackground /> */}
+            <WaveBackground />
             <div className="content-area">
                 xs
             </div>

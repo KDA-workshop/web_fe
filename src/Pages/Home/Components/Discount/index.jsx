@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import moment from 'moment'
+import NoImage from 'Assets/Images/no-image.png'
 import './discount.scss';
 import { Carousel } from 'antd';
 import Anemos from 'Assets/Images/anemos.png';
@@ -111,7 +112,7 @@ const Discount = () => {
             <div className="discount-content">
                 <div className="discount-info-wrapper">
                     <div className="discount-banner-list">
-                        <div className="banner-item">disc 1</div>
+                        <img src={NoImage} alt='no-image' />
                     </div>
                     <div className="discount-item-wrapper">
                         {
