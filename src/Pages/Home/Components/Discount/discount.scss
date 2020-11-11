@@ -22,19 +22,41 @@
 			padding: 1vh 0 1vh 1vh;
 			display: flex;
 			justify-content: center;
+			
+			.discount-banner-list {
+				width: 40%;
+				display: flex;
+				justify-content: space-between;
+				flex-direction: column;
+				padding: 0 1vh;
+				background-color: pink;
+				@include tabletOrPhone {
+					width: 100%;
+					margin: 1vh 0;
+				}
+				
+				.banner-item {
+					width: 100%;
+					border-radius: .5vh;
+					background: linear-gradient(180deg, #00F69E 1.67%, #A3FF83 54.73%, #F5FFA4 100%);
+					padding: 1vh;
+					height: 100%;
+				}
+			}
 			@include tabletOrPhone {
 				flex-direction: column;
 				padding: 0;
 			}
-
-			.discount-event-countdown {
-				background: linear-gradient(180deg, #00F69E 1.67%, #A3FF83 54.73%, #F5FFA4 100%);
-				width: 40%;
-			}
-
+			
 			.discount-item-wrapper {
 				width: 60%;
 				position: relative;
+				&:hover {
+					.discount-manual-slider {
+						opacity: 1;
+					}
+				}
+
 				@include tabletOrPhone {
 					width: 100%;
 				}
@@ -48,6 +70,7 @@
 					overflow: hidden;
 					border-radius: .2vh;
 					margin: auto;
+					cursor: pointer;
 
 					img {
 						height: 50%;
@@ -149,7 +172,8 @@
 					display: flex;
 					justify-content: space-between;
 					align-items: center;
-
+					opacity: 0;
+					transition: opacity .25s;
 					@include tabletOrPhone {
 						display: none;
 					}
